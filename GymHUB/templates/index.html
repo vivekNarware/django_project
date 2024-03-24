@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+username=admin
+password=admin -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background: url("static/img.jpg");
+            background-size: cover;
+            font-family: "Anta", sans-serif;
+        }
+
+        .left {
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            left: 60px;
+            height: 110px;
+        }
+
+        .left img {
+            width: 90px;
+        }
+
+        .left h4 {
+            margin-top: 0px;
+            text-align: center;
+            color: aliceblue;
+            font-size: 15px;
+        }
+
+        .left h4:hover{
+            color:  rgb(69, 68, 68);
+            text-decoration: underline;
+            cursor: pointer;
+            scale: 1.1;
+        }
+        .mid {
+            display: block;
+            margin: 10px auto;
+            width: 732px;
+        }
+
+        .right {
+            display: inline-block;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .navbar {
+            display: inline-block;
+        }
+
+        .navbar li {
+            display: inline-block;
+            font-size: 25px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 34px 23px;
+        }
+
+        .navbar li a:hover {
+            color: rgb(69, 68, 68);
+            text-decoration: underline;
+        }
+
+        .btn {
+            margin: 0px 10px;
+            padding: 3px 7px;
+            background: transparent;
+            font-weight: 700;
+            font-size: medium;
+            border: 2px solid black;
+            border-radius: 7px;
+        }
+
+        .btn:hover {
+            color: gray;
+            text-decoration: underline;
+            border: 2px solid gray;
+            cursor: pointer;
+            scale: 1.1;
+        }
+
+        .container {
+            border: 2px solid  rgb(69, 68, 68);
+            border-radius: 8px;
+            margin: 130px 117px;
+            padding: 25px 21px;
+            width: 420px;
+        }
+        .form_group input{
+            border: 2px solid gray;
+            border-radius: 8px;
+            margin: 7px 20px;
+            text-align: center;
+            padding: 6px;
+            width: 370px;
+            font-size: larger;
+        }
+        .container h2{
+            text-align: center;
+            text-decoration: dashed;
+        }
+        .container button{
+            display: inline-block;
+            margin: 12px 38px;
+            width:130px ;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- this is for logo -->
+    <div class="left">
+        <img src="static/gym.webp" alt="">
+        <h4>Fitness Club</h4>
+    </div>
+    <!-- this is for navbar -->
+    <div class="mid">
+        <ul class="navbar">
+            <li><a href="">Home</a></a></li>
+            <li><a href="">About us</a></li>
+            <li><a href="">Fitness Calculator</a></li>
+            <li><a href="">Contact us</a></li>
+        </ul>
+    </div>
+    <!-- this is for buttons -->
+    <div class="right">
+        <button class="btn">Contact us</button>
+        <button class="btn">Email us</button>
+    </div>
+    <div class="container">
+        <h2>Join the best <i>GYM</i> of <i>INDORE</i>....</h2>    
+        <form method="post">
+            {% csrf_token %}
+            <div class="form_group">
+                <input type="text" class="name" name="name" placeholder="Enter your Name">
+            </div>
+            <div class="form_group">
+                <input type="text" class="age" name="age" placeholder="Enter your Age">
+            </div>
+            <div class="form_group">
+                <input type="text" class="gender" name="gender" placeholder="Enter your Gender">
+            </div>
+            <div class="form_group">
+                <input type="text" class="locality" name="locality" placeholder="Enter your Locality">
+            </div>
+            <div class="form_group">
+                <input type="text" class="email" name="email" placeholder="Enter your E-mail">
+            </div>
+            <div class="form_group">
+                <input type="text" class="number" name="number" placeholder="Enter your Number">
+            </div>
+            <button class="btn"type="submit" class="Submit">Submit</button>
+            <button class="btn" name="Reset">Reset</button>
+        </form>
+    </div>
+</body>
+
+</html>
